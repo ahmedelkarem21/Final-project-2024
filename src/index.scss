@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+// Global styles
+
+@import "./sass/helpers/variables";
+@import "./sass/global/global";
+
+// Layout
+@import"./sass/layout/siteNav";
+
+// Views
+@import "./sass/views/homepage";
+

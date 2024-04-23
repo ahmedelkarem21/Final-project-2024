@@ -1,0 +1,115 @@
+.home {
+
+    .sameLocation {
+        direction: initial;
+    }
+
+    .form-control {
+        border: solid #0D6EFD !important;
+    }
+
+    .grayText {
+        color: #8B96A5;
+    }
+
+    .myBorder {
+        border: #E0E0E0 solid 1px;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .productBorder {
+        border-left: #E0E0E0 solid 1px !important;
+    }
+
+    .bg-white {
+        background-color: white;
+    }
+
+    .bg-lightRed {
+        background-color: #FFE3E3 !important;
+    }
+
+    .electronics {
+        background-image: url(./assets/first_image.png);
+        background-size: cover;
+    }
+
+    .bg-gray {
+        background-color: #EFF2F4;
+    }
+
+    .easyWay {
+        background-image: linear-gradient(0.25turn, #2C7CF1, #00D1FF80), url(./assets/background.png);
+    }
+
+    .myForm {
+        outline: none !important;
+
+    }
+
+    .homeOutdoor {
+        background-image: linear-gradient(#FFE8BA66, #FFE8BA66), url(./assets/home.jpeg);
+        background-size: cover;
+    }
+
+    .gadget {
+        background-image: url(./assets/gadget.png);
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .extra1 {
+        height: 120px;
+        background-image: linear-gradient(rgba(128, 128, 128, 0.438), rgba(128, 128, 128, 0.438)), url(./assets/extra-1.png);
+        background-size: cover;
+    }
+
+    .extra2 {
+        height: 120px;
+        background-image: linear-gradient(rgba(128, 128, 128, 0.438), rgba(128, 128, 128, 0.438)), url(./assets/extra-2.png);
+        background-size: cover;
+    }
+
+    .extra3 {
+        height: 120px;
+        background-image: linear-gradient(rgba(128, 128, 128, 0.438), rgba(128, 128, 128, 0.438)), url(./assets/extra-3.png);
+        background-size: cover;
+    }
+
+    .extra4 {
+        height: 120px;
+        background-image: linear-gradient(rgba(128, 128, 128, 0.438), rgba(128, 128, 128, 0.438)), url(./assets/extra-4.png);
+        background-size: cover;
+    }
+
+
+    .contentBox {
+        box-sizing: content-box;
+        border: solid white;
+        position: absolute;
+        bottom: 27%;
+        right: 5%;
+    }
+
+    .fs-tiny {
+        font-size: 0.8rem;
+        line-height: 4px;
+    }
+
+    .h-90 {
+        height: 90%;
+    }
+
+    .h-80 {
+        height: 80%;
+    }
+
+    .w20 {
+        width: 20%;
+    }
+
+    .myWidth {
+        width: 20px;
+    }
+}

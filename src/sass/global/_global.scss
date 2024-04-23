@@ -1,0 +1,102 @@
+* {
+    font-family: "Cairo", sans-serif;
+}
+
+:root {
+    background-color: $main_color;
+}
+
+.mainBackground {
+    background-color: $main_color;
+}
+
+
+svg {
+    font-size: 1.3rem;
+    color: #8B96A5;
+}
+
+// .langIcon {
+//     font-size: 2.5rem;
+// }
+
+.langIcon:hover {
+    cursor: pointer;
+}
+
+.rtl {
+    direction: rtl;
+}
+
+.ltr {
+    direction: ltr;
+}
+
+.fs-tiny {
+    font-size: 0.8rem;
+    line-height: 4px;
+}
+
+.grayText {
+    color: #8B96A5!important;
+}
+
+.myBorder {
+    border: #E0E0E0 solid 1px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.box {
+    box-sizing: content-box;
+}
+
+.borderBox {
+    box-sizing: border-box;
+}
+
+.largerCheckbox {
+    height: 18px;
+    width: 18px;
+}
+
+.lineHeight {
+    line-height: 20 px;
+}
+
+
+.bg-gray {
+  color:  #DEE2E7 !important;
+}
+
+.textGreen {
+    color: #00B517;
+}
+
+.lightRedBg {
+    background-color: #FFF0DF !important;
+}
+
+.w95 {
+    width: 95%;
+}
+
+.w85 {
+    width: 85%;
+}
+
+#myCrumb {
+    margin-bottom: 0!important;
+    padding-top: 1.5%!important; 
+}
+
+
+#myDrop {
+    width: max-content!important;   
+}
+
+.grayLayout {
+    background-image: linear-gradient(rgba(128, 128, 128, 0.438), rgba(128, 128, 128, 0.438))!important;
+    z-index: 2!important;
+} 
