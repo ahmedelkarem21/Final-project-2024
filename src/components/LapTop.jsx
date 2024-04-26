@@ -59,7 +59,7 @@ export default function LapTop() {
                                         <h6 className='text-primary'>View details</h6>
                                     </Col>
                                     <Col xs={2} className='text-end my-2'>
-                                        <FaRegHeart onClick={checkCart} className={'myBorder p-2 box text-' + type}/>
+                                        <FaRegHeart onClick={() => checkCart} className={'myBorder p-2 box text-' + type}/>
                                         <NavLink to="/Cart" className="nav-link">
                                             <FaCartShopping className='text-primary myBorder p-2 box my-2'/>
                                         </NavLink>

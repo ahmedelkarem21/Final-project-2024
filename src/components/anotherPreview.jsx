@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Row, Button } from "react-bootstrap"
+import { Col, Row, Button, Card } from "react-bootstrap"
 import tshirt from "../assets/Tshirt.jpeg"
 import { FaStar } from "react-icons/fa"
 import { MdOutlineMessage, MdOutlineLanguage, MdOutlineVerifiedUser } from "react-icons/md";
@@ -9,27 +9,30 @@ import { FaRegHeart } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 
-export default function ProductPreview() {
+export default function AnotherPreview() {
 
     const [item, setItem] = useState([])
 
-    let getItems = () => {
-        fetch("https://dummyjson.com/products/category/laptops")
+    const params = useParams()
+
+    let getItem = () => {
+        fetch("https://fakestoreapi.com/products/" + params.id)
             .then(res => res.json())
-            .then(res => setItem(res.products))
+            .then(res => setItem(res))
     }
 
+    // console.log(item.rating.count);
+
     useEffect(() => {
-        getItems()
+        getItem()
     }, [])
 
     return (
         <div className='bg-white'>
-            <h1>ana hnaaaaak</h1>
             <Row className='flex-xl-nowrap flex-wrap myBorder p-4 gx-0 justify-content-around'>
                 <Col xl={3} xs={12} className='px-0 my-2'>
                     <div className='myBorder p-2 text-center'>
-                        <img src={tshirt} alt="this is is a product photo" height={300} />
+                        <img src={item.image} alt="this is is a product photo" className='w-100' />
                     </div>
                     <Row className='flex-nowrap gx-0 my-3'>
                         <Col className='myBorder p-2'>
@@ -50,7 +53,7 @@ export default function ProductPreview() {
                     </Row>
                 </Col>
                 <Col xl={5} xs={12} className='mx-2 my-1'>
-                    <h4 className='w-75'>Men's Long Sleeve T-shirt Cotton Base Layer Slim Muscle</h4>
+                    <h4 className='w-75'>{item.title}</h4>
                     <div className='my-3'>
                         <span>
                             <FaStar className='text-warning' />
@@ -70,15 +73,15 @@ export default function ProductPreview() {
                     </div>
                     <Row className='lightRedBg m-1 p-2 my-3'>
                         <Col xl={3} >
-                            <h5 className='text-danger fw-bold'>$98.00</h5>
+                            <h5 className='text-danger fw-bold'>${Math.floor(item.price)}</h5>
                             <span>50-100 pcs</span>
                         </Col>
                         <Col xl={3} className='border-start mx-4'>
-                            <h5 className='fw-bold'>$90.00</h5>
+                            <h5 className='fw-bold'>${Math.round(item.price *0.9)}</h5>
                             <span>100-700 pcs</span>
                         </Col>
                         <Col xl={3} className='border-start'>
-                            <h5 className='fw-bold'>$78.00</h5>
+                            <h5 className='fw-bold'>${Math.round(item.price *0.8)}</h5>
                             <span>700+ pcs</span>
                         </Col>
                     </Row>

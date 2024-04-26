@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Col, Card } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 
 export default function ProductCard({ product }) {
@@ -12,6 +13,9 @@ export default function ProductCard({ product }) {
                         <h6>{product.title}</h6>
                     </Card.Title>
                 </Card.Body>
+                <Card.Footer className="text-center">
+                    <Link className="btn btn-primary" to={`/products/${product.id}`}> Show More </Link>
+                </Card.Footer>
             </Card>
         </Col>
     )

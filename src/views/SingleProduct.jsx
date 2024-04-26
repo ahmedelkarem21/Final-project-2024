@@ -7,9 +7,6 @@ import SideNav from '../layout/SideNav'
 import CategoryFooter from '../layout/CategoryFooter'
 import SingleProducts from '../components/SingleProducts'
 
-
-
-
 export default function SingleProduct() {
 
   return (

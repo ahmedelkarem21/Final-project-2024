@@ -8,8 +8,25 @@ import itemThree from "../assets/item-3.png"
 import itemFour from "../assets/item-4.png"
 import itemFive from "../assets/item-5.png"
 import itemSix from "../assets/item-6.png"
+import { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
 
 export default function Description() {
+
+    const [item, setItem] = useState([])
+
+    const params = useParams()
+
+    let getItem = () => {
+        fetch("https://fakestoreapi.com/products/" + params.id)
+            .then(res => res.json())
+            .then(res => setItem(res))
+    }
+
+    useEffect(() => {
+        getItem()
+    }, [])
+
     return (
         <div className='bg-white myBorder my-4'>
             <Nav variant="tabs" defaultActiveKey="/home">
@@ -28,9 +45,7 @@ export default function Description() {
             </Nav>
             <div className='px-3 py-2'>
                 <div>
-                    <p className='w95'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta natus asperiores sapiente nobis deserunt ullam corporis quaerat, quidem repellendus ut a quia, quibusdam voluptas consequatur non itaque amet cum ratione.
-                        Fugiat eum commodi deleniti nostrum nemo perspiciatis dolores doloribus eius ullam sequi obcaecati veritatis iure quae, eveniet porro at, aliquid rerum odit placeat laborum laboriosam facere magnam. Est, nemo voluptatibus!
-                        Nemo pariatur necessitatibus illum dicta voluptatem voluptas tenetur vel temporibus, suscipit accusamus rem nihil consectetur, itaque dignissimos. Excepturi quibusdam quod adipisci cupiditate, necessitatibus a at fuga consequuntur natus repellendus minus.</p>
+                    <p className='w-75'>{item.description}</p>
                 </div>
                 <div className='w-75 my-4'>
                     <table className="table table-bordered">

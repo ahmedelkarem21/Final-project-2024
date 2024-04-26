@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next"
 import { Container, Row, Spinner } from "react-bootstrap"
 import ProductCard from "../components/ProductCard";
-import Timer from "../components/Timer";
 export default function Products() {
     const [products, setProducts] = useState([])
     let { t } = useTranslation();
