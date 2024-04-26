@@ -6,7 +6,7 @@ import CategoryNav from '../layout/CategoryNav'
 import SideNav from '../layout/SideNav'
 import CategoryFooter from '../layout/CategoryFooter'
 import SingleProducts from '../components/SingleProducts'
-import SingleProductx from '../components/SingleProducts'
+
 
 
 

@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next"
 import Footer from "./layout/Footer"
 import HotOffers from "./views/HotOffers"
 import OneProduct from "./views/OneProduct"
-import { Container } from 'react-bootstrap';
+import MyCart from "./components/MyCart"
 
 function App() {
   let { i18n } = useTranslation()
@@ -22,6 +22,7 @@ function App() {
         <Route path="/hot_offers" Component={HotOffers} />
         <Route path="/single_product" Component={SingleProduct} />
         <Route path="/one_product" Component={OneProduct} />
+        <Route path="/Cart" Component={MyCart} />
         <Route path="/*" Component={ErrorPage} />
       </Routes>
       <Footer />

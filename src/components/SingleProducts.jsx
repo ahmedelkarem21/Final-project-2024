@@ -8,10 +8,17 @@ import itemThree from "../assets/item-3.png"
 import itemFour from "../assets/item-4.png"
 import itemFive from "../assets/item-5.png"
 import itemSix from "../assets/item-6.png"
+import { useEffect, useState } from 'react'
 
 export default function SingleProducts() {
-
+    const [type, setType] = useState("primary")
     let { t } = useTranslation();
+    let checkCart = () => {
+        const changeType = [...type]
+        changeType === "primary" ?  changeType = "danger" : changeType = "primary"
+        changeType === "danger" ? changeType = "primary" : changeType = "danger"
+        setType(changeType);
+    }
 
     return (
         <div className='bg-light'>
@@ -32,7 +39,7 @@ export default function SingleProducts() {
                             </div>
                         </Col>
                         <Col xl={3} className='text-end'>
-                            <FaRegHeart className='text-primary myBorder p-2 box' />
+                            <FaRegHeart onClick={checkCart} className={'myBorder p-2 box text-' + type}/>
                         </Col>
                     </Row>
                     <div className='my-1'>
@@ -56,7 +63,7 @@ export default function SingleProducts() {
                             </div>
                         </Col>
                         <Col xl={3} className='text-end'>
-                            <FaRegHeart className='text-primary myBorder p-2 box' />
+                            <FaRegHeart onClick={checkCart} className={'myBorder p-2 box text-' + type}/>
                         </Col>
                     </Row>
                     <div className='my-2'>

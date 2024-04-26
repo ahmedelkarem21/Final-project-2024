@@ -3,11 +3,15 @@ import { Col, Row, Spinner } from "react-bootstrap"
 import { useEffect, useState } from 'react'
 import { useTranslation } from "react-i18next"
 import { FaStar, FaRegHeart } from "react-icons/fa";
+import { FaCartShopping } from "react-icons/fa6";
+import { NavLink } from 'react-router-dom';
 
 
 export default function LapTop() {
     const [products, setProducts] = useState([])
     let { t } = useTranslation();
+
+    const [type, setType] = useState("primary")
 
     let getProducts = () => {
         fetch("https://dummyjson.com/products/category/laptops")
@@ -18,6 +22,12 @@ export default function LapTop() {
     useEffect(() => {
         getProducts()
     }, [])
+
+    let checkCart = () => {
+        setType(type === "primary" ? "danger" : "primary")
+        setType(type === "danger" ? "primary" : "danger")
+
+    }
 
     return (
         <div>
@@ -49,7 +59,10 @@ export default function LapTop() {
                                         <h6 className='text-primary'>View details</h6>
                                     </Col>
                                     <Col xs={2} className='text-end my-2'>
-                                        <FaRegHeart className='text-primary myBorder p-2 box' />
+                                        <FaRegHeart onClick={checkCart} className={'myBorder p-2 box text-' + type}/>
+                                        <NavLink to="/Cart" className="nav-link">
+                                            <FaCartShopping className='text-primary myBorder p-2 box my-2'/>
+                                        </NavLink>
                                     </Col>
                                 </Row>
                             </Col>

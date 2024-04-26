@@ -3,9 +3,10 @@ import { FaLanguage } from "react-icons/fa";
 import { useTranslation } from "react-i18next"
 import { NavLink } from 'react-router-dom';
 import { IoPerson } from "react-icons/io5";
-import { FaMessage, FaHeart } from "react-icons/fa6";
+import { FaMessage, FaHeart, FaCartShopping } from "react-icons/fa6";
 import logo from "../assets/logo.jpeg"
 import { MdOutlineLanguage } from "react-icons/md";
+
 
 
 export default function SiteNav() {
@@ -39,12 +40,14 @@ export default function SiteNav() {
                                 <h6 className='my-1'>{t('profile')}</h6>
                             </Col>
                             <Col className='text-center'>
-                                <FaMessage />
-                                <h6 className='my-1'>{t('message')}</h6>
-                            </Col>
-                            <Col className='text-center'>
                                 <FaHeart />
                                 <h6 className='my-1'>{t('orders')}</h6>
+                            </Col>
+                            <Col className='text-center'>
+                                <NavLink to="/Cart" className="nav-link">
+                                    <FaCartShopping />
+                                    <h6 className='my-1'>{t('cart')}</h6>
+                                </NavLink>
                             </Col>
                             <Col className='mx-0 my-0 px-1'>
                                 {/* <FaLanguage onClick={handleLanguage} className='langIcon my-1' /> */}
