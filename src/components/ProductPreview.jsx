@@ -25,7 +25,7 @@ export default function ProductPreview() {
 
     return (
         <div className='bg-white'>
-            <h1>ana hnaaaaak</h1>
+            {/* <h1>ana hnaaaaak</h1> */}
             <Row className='flex-xl-nowrap flex-wrap myBorder p-4 gx-0 justify-content-around'>
                 <Col xl={3} xs={12} className='px-0 my-2'>
                     <div className='myBorder p-2 text-center'>

@@ -14,9 +14,8 @@ export default function SingleProducts() {
     const [type, setType] = useState("primary")
     let { t } = useTranslation();
     let checkCart = () => {
-        const changeType = [...type]
-        changeType === "primary" ?  changeType = "danger" : changeType = "primary"
-        changeType === "danger" ? changeType = "primary" : changeType = "danger"
+        type === "primary" ? "danger" : "primary"
+        type === "danger" ? "primary" : "danger"
         setType(changeType);
     }
 

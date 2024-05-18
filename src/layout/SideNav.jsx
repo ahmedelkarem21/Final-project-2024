@@ -4,8 +4,13 @@ import { FaStar } from "react-icons/fa";
 import { Button, Collapse } from "react-bootstrap"
 import { MdOutlineSubject } from "react-icons/md";
 
-export default function SideNav() {
+export default function SideNav({ product }) {
     const [open, setOpen] = useState(false);
+    let getCategory = (ev) => {
+        fetch("https://dummyjson.com/products/category/" + ev.target.value)
+            .then(res => res.json())
+            .then(res => setProducts(res.products))
+    }
 
     return (
         <div className='px-2 mx-2 text-xl-start text-center border-top border-bottom'>
@@ -16,20 +21,39 @@ export default function SideNav() {
                 variant="light"
                 className='my-2'
             >
-                <MdOutlineSubject/>
+                <MdOutlineSubject />
                 <span className='grayText mx-1'>All Categories</span>
             </Button>
             <Collapse in={open}>
                 <div id="example-collapse-text">
                     <div className='py-2'>
                         <h6 className='fw-bold'>Category</h6>
-                        <ul className="list-group list-group-flush">
+                        {/* <ul className="list-group list-group-flush">
                             <li className="list-group-item bg-light px-0 border-0">Mobile accessory</li>
                             <li className="list-group-item bg-light px-0 border-0" >Electronics</li>
                             <li className="list-group-item bg-light px-0 border-0">Smartphones</li>
                             <li className="list-group-item bg-light px-0 border-0">Modern tech</li>
                             <li className="list-group-item bg-light text-primary px-0 border-0">see all</li>
-                        </ul>
+                        </ul> */}
+                        <div className="form-check border-top py-2">
+                            <h6 className='fw-bold'>Condition</h6>
+                            <div className='py-1'>
+                                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                                <label className="form-check-label">Any</label>
+                            </div>
+                            <div className='py-1'>
+                                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Laptops" onClick={getCategory} />
+                                <label className="form-check-label">Laptops</label>
+                            </div>
+                            <div className='py-1'>
+                                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="smartphones" onClick={getCategory} />
+                                <label className="form-check-label">Smartphones</label>
+                            </div>
+                            <div className='py-1'>
+                                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="fragrances" onClick={getCategory} />
+                                <label className="form-check-label">Fragrances</label>
+                            </div>
+                        </div>
                     </div>
                     <div className='my-3 border-top py-2'>
                         <h6 className='fw-bold'>Brands</h6>

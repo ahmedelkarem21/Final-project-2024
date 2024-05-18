@@ -15,7 +15,7 @@ export default function HotOffers() {
     <div className="mainBackground ltr">
         <Container>
             <Crumb/>
-            <h1>ana feeeen</h1>
+            {/* <h1>ana feeeen</h1> */}
             <Row className='py-2 justify-content-between'>
                 <Col xl={2} className="p-0">
                   <SideNav />

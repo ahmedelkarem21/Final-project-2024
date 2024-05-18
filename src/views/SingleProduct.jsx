@@ -13,6 +13,7 @@ export default function SingleProduct() {
     <div className="mainBackground ltr">
         <Container>
             <Crumb/>
+            {/* <h1>ok</h1> */}
             <Row className='py-2 justify-content-between'>
                 <Col xl={2} className="p-0">
                   <SideNav />

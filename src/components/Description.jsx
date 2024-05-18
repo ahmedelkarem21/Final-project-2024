@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav';
 import TshirtTwo from "../assets/T-shirtTwo.png"
+import TshirtOne from "../assets/Tshirt.jpeg"
 import { Col, Row, Button } from "react-bootstrap"
 import itemOne from "../assets/item-1.png"
 import itemTwo from "../assets/item-2.png"
@@ -103,7 +104,7 @@ export function MayLike() {
                 </Row>
                 <Row className='gx-0 justify-content-between my-2'>
                     <Col xl={4} className='myBorder p-2'>
-                        <img src={TshirtTwo} alt="this is a product photo" className='w-100' />
+                        <img src={TshirtOne} alt="this is a product photo" className='w-100' />
                     </Col>
                     <Col xl={6} className='mx-3 py-1'>
                         <h6>Men Blazers Sets</h6>
@@ -113,7 +114,7 @@ export function MayLike() {
                 </Row>
                 <Row className='gx-0 justify-content-between my-2'>
                     <Col xl={4} className='myBorder p-2'>
-                        <img src={TshirtTwo} alt="this is a product photo" className='w-100' />
+                        <img src={itemTwo} alt="this is a product photo" className='w-100' />
                     </Col>
                     <Col xl={6} className='mx-3 py-1'>
                         <h6>Men Blazers Sets</h6>
@@ -123,7 +124,7 @@ export function MayLike() {
                 </Row>
                 <Row className='gx-0 justify-content-between my-2'>
                     <Col xl={4} className='myBorder p-2'>
-                        <img src={TshirtTwo} alt="this is a product photo" className='w-100' />
+                        <img src={itemFour} alt="this is a product photo" className='w-100' />
                     </Col>
                     <Col xl={6} className='mx-3 py-1'>
                         <h6>Men Blazers Sets</h6>
@@ -133,7 +134,7 @@ export function MayLike() {
                 </Row>
                 <Row className='gx-0 justify-content-between my-0'>
                     <Col xl={4} className='myBorder p-2'>
-                        <img src={TshirtTwo} alt="this is a product photo" className='w-100' />
+                        <img src={TshirtOne} alt="this is a product photo" className='w-100' />
                     </Col>
                     <Col xl={6} className='mx-3 py-1'>
                         <h6>Men Blazers Sets</h6>

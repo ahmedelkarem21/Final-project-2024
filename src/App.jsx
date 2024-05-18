@@ -10,6 +10,8 @@ import HotOffers from "./views/HotOffers"
 import OneProduct from "./views/OneProduct"
 import MyCart from "./components/MyCart"
 import anotherProduct from "./views/anotherProduct"
+import AddProduct from "./views/AddProduct"
+import NewOne from "./views/NewOne"
 
 function App() {
   let { i18n } = useTranslation()
@@ -25,6 +27,8 @@ function App() {
         <Route path="/one_product" Component={OneProduct} />
         <Route path="/products/:id" Component={anotherProduct} />
         <Route path="/Cart" Component={MyCart} />
+        <Route path="/addProduct" Component={AddProduct} />
+        <Route path="/new_one" Component={NewOne} />
         <Route path="/*" Component={ErrorPage} />
       </Routes>
       <Footer />

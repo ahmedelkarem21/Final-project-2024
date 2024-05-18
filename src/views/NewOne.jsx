@@ -2,26 +2,20 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next"
 import { Container, Row, Spinner } from "react-bootstrap"
 import ProductCard from "../components/ProductCard";
-export default function Products() {
+
+export default function NewOne() {
     const [products, setProducts] = useState([])
     let { t } = useTranslation();
 
     let getProducts = () => {
-        fetch("https://fakestoreapi.com/products/")
+        fetch("http://localhost:3000/love_products/")
             .then(res => res.json())
             .then(res => setProducts(res))
-            // .then(()=> console.log(products.id))
     }
 
     useEffect(() => {
         getProducts()
     }, [])
-
-    // let myArray = products.map((item) => item.price);
-
-    // const sum = myArray.reduce((a, b) => a + b, 0);
-
-    // console.log(Math.floor(sum));
 
     return (
         <div className="mainBackground">
@@ -41,7 +35,6 @@ export default function Products() {
                         :
                         <div className="d-flex justify-content-center">
                             <Spinner animation="grow" />
-                           
                         </div>
                 }
             </Container>

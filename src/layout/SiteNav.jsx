@@ -69,6 +69,8 @@ export default function SiteNav() {
                                     <NavLink to="/one_product" className="nav-link mx-lg-2 mx-1">{t('projects')}</NavLink>
                                     <NavLink to="/products" className="nav-link mx-lg-2 mx-1">{t('menu_item')}</NavLink>
                                     <NavLink to="/products" className="nav-link mx-lg-2 mx-1">{t('help')}</NavLink>
+                                    {/* <NavLink to="/addproduct" className="nav-link mx-lg-2 mx-1">add product</NavLink> */}
+                                    {/* <NavLink to="/new_one" className="nav-link mx-lg-2 mx-1">New One</NavLink> */}
                                 </Nav>
                             </Navbar>
                         </Col>
