@@ -4,12 +4,16 @@ import { Link } from "react-router-dom"
 import Swal from 'sweetalert2'
 import { FaStar, FaRegHeart } from "react-icons/fa";
 import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 export default function ProductCard({ product, getProducts, products }) {
 
     const [type, setType] = useState("primary")
     var [data, setData] = useState([])
+
+    const countState = useSelector((state) => state.counter)
+    const dispatch = useDispatch()
 
     let checkCart = (id) => {
         if (type === 'primary') setType('danger')
@@ -18,14 +22,17 @@ export default function ProductCard({ product, getProducts, products }) {
         fetch("http://localhost:3000/love_products")
             .then(res => res.json())
             .then(res => setData(res))
-            .then(()=> console.log(data))
 
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ ...products[id - 1] })
         };
-        fetch('http://localhost:3000/love_products', requestOptions)
+        fetch('http://localhost:3000/love_products', requestOptions);
+
+        dispatch({
+            type: "INCREMENT"
+        })
     }
     // const sum = product.reduce((a, b) => a + b, 0);
 
@@ -57,7 +64,7 @@ export default function ProductCard({ product, getProducts, products }) {
                 </Card.Body>
                 <Card.Footer className="text-center">
                     <Link className="btn btn-light text-" to={`/products/${product.id}`}> Show More </Link>
-                    <FaRegHeart onClick={() => checkCart(product.id)} className={'myBorder p-2 mx-2 box text-' + type} />
+                    <FaRegHeart onClick={() => checkCart(product.id)} className={'myBorder p-2 myHeart mx-2 box text-' + type} />
                     {/* <Button variant="danger" onClick={() => handleDelete(product.id)}>Delete</Button> */}
                 </Card.Footer>
             </Card>

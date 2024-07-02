@@ -6,11 +6,14 @@ import { IoPerson } from "react-icons/io5";
 import { FaMessage, FaHeart, FaCartShopping } from "react-icons/fa6";
 import logo from "../assets/logo.jpeg"
 import { MdOutlineLanguage } from "react-icons/md";
+import { useSelector } from 'react-redux';
 
 
 
 export default function SiteNav() {
     var { t, i18n } = useTranslation()
+
+    const countState = useSelector(state => state.counter)
 
     let handleLanguage = () => {
         i18n.language === 'en' ? i18n.changeLanguage('ar') : i18n.changeLanguage('en')
@@ -44,9 +47,12 @@ export default function SiteNav() {
                                 <h6 className='my-1'>{t('orders')}</h6>
                             </Col>
                             <Col className='text-center'>
-                                <NavLink to="/Cart" className="nav-link">
-                                    <FaCartShopping />
-                                    <h6 className='my-1'>{t('cart')}</h6>
+                                <NavLink to="/Cart" className="nav-link d-flex">
+                                    <div>
+                                        <FaCartShopping />
+                                        <h6 className='my-1'>{t('cart')}</h6>
+                                    </div>
+                                    <div className='text-danger fw-bold'>{countState}</div>
                                 </NavLink>
                             </Col>
                             <Col className='mx-0 my-0 px-1'>

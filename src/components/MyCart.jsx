@@ -3,10 +3,16 @@ import { Container, Row, Spinner, Button, Card } from "react-bootstrap"
 import ProductCard from "../components/ProductCard";
 import { useTranslation } from "react-i18next"
 import Swal from 'sweetalert2'
+import { useDispatch, useSelector } from 'react-redux'
 
 export default function myCart() {
+
   const [items, setItems] = useState([]);
+
   let { t } = useTranslation();
+
+  const countState = useSelector((state) => state.counter)
+  const dispatch = useDispatch()
 
   // Fetching data from the API
   // useEffect(() => {
@@ -32,12 +38,15 @@ export default function myCart() {
     getCart()
   }, [])
 
+
+
   let myArray = items.map((item) => item.price);
 
   const sum = myArray.reduce((a, b) => a + b, 0);
 
   console.log(Math.floor(sum));
-
+ 
+ 
 
   // Adding data
   const addItem = () => {
@@ -77,6 +86,10 @@ export default function myCart() {
         fetch('http://localhost:3000/love_products/' + itemId, { method: 'DELETE' })
           .then(() => getCart())
       })
+
+      dispatch({
+        type: "DECREMENT"
+    })
   };
 
   const handleDeletex = (id) => {
@@ -120,12 +133,12 @@ export default function myCart() {
         {
           items.length > 0
             ?
-            <Row className=" row-cols-md-3 row-cols-lg-4 row-cols-xl-1 row-cols-sm-2  g-4 row-cols-1 text-center">
+            <Row className="   g-4 row-cols-1 text-center">
               {items.map(product =>
                 <div key={product.id}>
                   {/* <ProductCard product={product} /> */}
                   <Card className='w-75 mx-auto '>
-                    <Card.Img variant="top" src={product.image} className='w-25 mx-auto p-4' height={230} />
+                    <Card.Img variant="top" src={product.image} className='w-25 mx-auto p-4' />
                     <Card.Body>
                       <Card.Text>
                         {product.title}
