@@ -33,11 +33,11 @@ export default function Electronics() {
 
         <div className='py-3 ltr'>
             <Container>
-                <div className='d-flex justify-content-between w-25 mx-auto my-3'>
+                {/* <div className='d-flex justify-content-between w-25 mx-auto my-3'>
                     <Button variant='danger' size="sm" onClick={decrease}>Decrease</Button>
                         <div>{countState}</div>
                     <Button variant='primary' size="sm" onClick={increase}>Increase</Button>
-                </div>
+                </div> */}
                 <div className='bg-white p-4 myBorder rounded-2'>
                     <Row className='gx-4'>
                         <Col sm={12} xl={2} className='text-center text-xl-start'>
